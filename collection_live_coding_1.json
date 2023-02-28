@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "b04e12d0-1111-48db-88f3-4436be02b85f",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Insert user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pinco Palloni\",\n    \"email\": \"pincopalloni2@gmail.com\",\n    \"gender\": \"male\",\n    \"status\": \"active\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/users/696160",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"696160"
+					],
+					"query": [
+						{
+							"key": "Authentication",
+							"value": "Bearer 0b19d08078d0012bc06f2a4d1e1dcc7cfed37ba3a43fe26bb645c36599022e8a",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pinca pallona\",\n    \"gender\": \"female\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/696160",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"696160"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/users/696160",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"696160"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
